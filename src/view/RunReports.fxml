@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="521.0" prefWidth="884.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Report">
+    <children>
+        <Label layoutX="29.0" layoutY="25.0" prefHeight="26.0" prefWidth="146.0" text="Reports">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Button fx:id="backButton" layoutX="400.0" layoutY="481.0" mnemonicParsing="false" onAction="#onBackButton" prefHeight="26.0" prefWidth="84.0" text="Back" />
+        <TabPane layoutX="15.0" layoutY="63.0" prefHeight="396.0" prefWidth="848.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab fx:id="appointmentsTotalTab" onSelectionChanged="#onAppointmentTotals" text="Appointment Totals">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane prefHeight="363.0" prefWidth="848.0">
+                                    <children>
+                              <TextArea fx:id="reportTextField" layoutX="14.0" layoutY="14.0" prefHeight="352.0" prefWidth="834.0" />
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="contactsScheduleTab" text="Contacts Schedule">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane prefHeight="365.0" prefWidth="848.0">
+                                    <children>
+                                        <ComboBox fx:id="contactScheduleCombo" layoutX="659.0" layoutY="3.0" onAction="#onContactScheduleCombo" prefWidth="150.0" />
+                                        <Text layoutX="511.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Appointments by contact:" />
+                                        <TableView fx:id="allAppointmentsTable" layoutY="36.0" prefHeight="301.0" prefWidth="848.0">
+                                            <columns>
+                                                <TableColumn fx:id="appointmentsIDCol" prefWidth="35.0" text="ID" />
+                                                <TableColumn fx:id="appointmentsTitleCol" prefWidth="96.0" text="Title" />
+                                                <TableColumn fx:id="appointmentsDescriptionCol" prefWidth="117.0" text="Description" />
+                                                <TableColumn fx:id="appointmentsLocationCol" prefWidth="105.0" text="Location" />
+                                                <TableColumn fx:id="appointmentType" prefWidth="117.0" text="Type" />
+                                                <TableColumn fx:id="appointmentStart" prefWidth="119.0" text="Start Date/Time" />
+                                                <TableColumn fx:id="appointmentEnd" prefWidth="119.0" text="End Date/Time" />
+                                                <TableColumn fx:id="appointmentCustomerID" minWidth="0.0" prefWidth="73.0" text="CustomerID" />
+                                                <TableColumn fx:id="tableContactID" minWidth="0.0" prefWidth="66.0" text="Contact ID" />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="customerCountryTab" onSelectionChanged="#onCustomerCountry" text="Customers by Country">
+                    <content>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <AnchorPane prefHeight="363.0" prefWidth="848.0">
+                                    <children>
+                                        <TableView fx:id="customersCountryTable" layoutX="74.0" layoutY="62.0" prefHeight="253.0" prefWidth="610.0">
+                                            <columns>
+                                                <TableColumn fx:id="countryNameCol" prefWidth="270.0" text="Country Name" />
+                                                <TableColumn fx:id="countryTotalCol" prefWidth="339.0" text="Total " />
+                                            </columns>
+                                        </TableView>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>
